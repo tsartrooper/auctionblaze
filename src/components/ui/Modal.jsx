@@ -7,7 +7,7 @@ import React, {
 import { createPortal } from 'react-dom';
 import { useCloseOutside } from '../../hooks/useCloseOutside';
 
-const ModalContext = createContext();
+export const ModalContext = createContext();
 
 function Modal({ children }) {
   const [open, setOpen] = useState(false);
