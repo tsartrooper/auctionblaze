@@ -15,10 +15,6 @@ export default class Auction{
         this.startingPrice = data.startingPrice || 0;
         this.status = data.status || null;    
         this.bids = data.bids || [];
+        this.picture = data.picture;
     }
-
-
-
-
-
 }
