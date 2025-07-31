@@ -1,3 +1,7 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
 @layer components {
   /* Buttons */
   .btn {
@@ -106,15 +110,15 @@
   }
   
   .nav-link {
-    @apply px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-200;
+    @apply px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ;
   }
   
   .nav-link-active {
-    @apply nav-link bg-primary-100 text-primary-700;
+    @apply nav-link bg-primary-100 text-primary-700 text-lg;
   }
   
   .nav-link-inactive {
-    @apply nav-link text-gray-600 hover:text-gray-900 hover:bg-gray-100;
+    @apply nav-link text-gray-600 hover:text-gray-900 hover:bg-gray-100 text-lg;
   }
   
   /* Containers */

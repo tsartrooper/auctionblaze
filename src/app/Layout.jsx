@@ -1,5 +1,5 @@
-import Sidebar from "./components/layout/Sidebar";
-import './styles/globals.css'
+import Sidebar from "../components/layout/Sidebar";
+import '../styles/globals.css'
 
 
 
