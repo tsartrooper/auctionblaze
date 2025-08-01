@@ -9,7 +9,7 @@ export default function Login() {
 
   const handleSuccess = async (credentialResponse) => {
     try {
-      const response = await fetch(`/${API_URL}/auth/google`, {
+      const response = await fetch(`${API_URL}/auth/google`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ token: credentialResponse.credential }),
