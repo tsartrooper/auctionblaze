@@ -46,18 +46,14 @@ export default function Sidebar() {
           My Bids
         </NavLink>
         <NavLink
-          to="/profile"
-          className={({ isActive }) =>
-            isActive ? 'nav-link-active' : 'nav-link-inactive'
-          }
+        to=""
+          className='nav-link-inactive'
         >
           Profile
         </NavLink>
         <NavLink
-          to="/settings"
-          className={({ isActive }) =>
-            isActive ? 'nav-link-active' : 'nav-link-inactive'
-          }
+          to=""
+          className='nav-link-inactive'
         >
           Settings
         </NavLink>
