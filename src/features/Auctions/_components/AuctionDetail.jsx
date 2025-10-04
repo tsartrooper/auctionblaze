@@ -11,14 +11,14 @@ import CurrentBid from '../../../components/ui/CurrentBid';
 import { getStatusConfig } from '../../../utils/getStatusConfig';
 import QuickInfo from '../../../components/ui/QuickInfo';
 import BidCard from '../../../components/BidCard';
+import { formatCurrency } from '../../../utils/formatCurrency';
 
 export default function AuctionDetail({ auction }) {
     console.log("endTime:", auction.endTime);
+    console.log("startTime:", auction.startTime);
 
-    const [timeLeft, setTimeLeft] = useState("");
     const [bidAmount, setBidAmount] = useState("");
 
-    useAuctionCountDown({ auction, setTimeLeft });
     
     const sortedBids = auction.bids ? [...auction.bids].sort((a, b) => b.amount - a.amount) : [];
     const { mutate: makeBid, isLoading, isError } = useMakeBid();
@@ -39,15 +39,6 @@ export default function AuctionDetail({ auction }) {
         
         await makeBid(bidData);
         setBidAmount("");
-    };
-
-    const formatCurrency = (amount) => {
-        return new Intl.NumberFormat('en-IN', {
-            style: 'currency',
-            currency: 'INR',
-            minimumFractionDigits: 0,
-            maximumFractionDigits: 0,
-        }).format(amount);
     };
 
     const getStatusColor = (status) => {
@@ -112,7 +103,7 @@ export default function AuctionDetail({ auction }) {
                     {/* Timer */}
                     {auction.status !== "CLOSED" && (
                         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
-                            <AuctionTimer timeLeft={timeLeft} status={auction.status} />
+                            <AuctionTimer auction={auction} />
                         </div>
                     )}
 

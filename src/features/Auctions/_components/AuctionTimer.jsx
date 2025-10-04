@@ -1,8 +1,16 @@
 import { Clock } from "lucide-react";
+import { useState } from "react";
+import useAuctionCountDown from "../../../hooks/useAuctionCountdown";
 
 
 
-export default function AuctionTimer({ timeLeft, status }){
+export default function AuctionTimer({ auction }){
+
+    const [timeLeft, setTimeLeft] = useState("");
+    const status=auction.status;
+
+    useAuctionCountDown({ auction, setTimeLeft });
+
     return (
         <div className="text-center mb-6">
             <div className="flex items-center justify-center gap-2 mb-2">

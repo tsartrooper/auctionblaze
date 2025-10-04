@@ -1,4 +1,3 @@
-// import {formatCurrency, formatTimeRemaining} from '../utils/formatters'
 
 export default class Auction{
     constructor(data={}){

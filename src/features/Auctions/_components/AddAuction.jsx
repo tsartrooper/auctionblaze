@@ -6,7 +6,7 @@ import Modal from "../../../components/ui/Modal";
 import { useCreateAuction } from "../../../hooks/useCreateAuction";
 import useModalContext from "../../../hooks/useModalContext";
 import { uploadImage } from "../../../services/imageUpload";
-import { CreativeCommons, Plus } from "lucide-react";
+import { Plus } from "lucide-react";
 
 
 function AddAuction() {
@@ -61,6 +61,8 @@ function AuctionForm({createAuction}){
       const imageUrl = await uploadImage(file)
       data.picture = imageUrl;
       delete data.file;
+      data.startTime = new Date(data.startTime).toISOString()
+      data.endTime = new Date(data.endTime).toISOString()
       console.log("data: ",data);
       await createAuction(data);
       return true;
